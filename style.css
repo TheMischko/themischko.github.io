@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+    --bg-color: #f1f1f1;
+    --type-writer-speed: 4s;
+    --type-writer-characters: 11;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px;
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.header-section h1{
+    font-family: 'Courier Prime', monospace;
+    font-size: 10vw;
+    position: relative;
+    align-self: center;
+    width: max-content;
+    margin: 0;
+}
+.header-section p{
+    font-family: 'Courier Prime', monospace;
+    font-size: 4vw;
+    margin: 0;
+    transform: translateY(100%);
+    opacity: 0;
+    filter: blur(5px);
+    animation: fly-from-bottom 1s ease 4.5s forwards;
+}
+
+.header-section h1::before,
+.header-section h1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.header-section h1::before{
+    background: var(--bg-color);
+    animation: 
+        typewriter var(--type-writer-speed) steps(var(--type-writer-characters)) 0.5s forwards;
+}
+
+.header-section h1::after{
+    width: 0.075em;
+    background: black;
+    animation: 
+        typewriter var(--type-writer-speed) steps(var(--type-writer-characters)) 0.5s forwards,
+        blink 1s linear 0.5s infinite
+}
+
+@keyframes typewriter {
+    to { 
+        left: 100%; 
+    }
+}
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fly-from-bottom{
+    to{
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+li:nth-child(2){
+    transition-delay: 400ms;
+}
+li:nth-child(3){
+    transition-delay: 800ms;
+}
+li:nth-child(4){
+    transition-delay: 1200ms;
+}
+li:nth-child(5){
+    transition-delay: 1600ms;
+}
+li:nth-child(6){
+    transition-delay: 2000ms;
+}
+li:nth-child(7){
+    transition-delay: 2400ms;
+}
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+
+.section-content{
+    padding: 4em;
+    border: 4px solid black;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.section-content h2{
+    font-weight: bold;
+    margin: 0;
+    font-size: 6vw;
+}
+.section-content li{
+    margin-bottom: 1em;
+}
