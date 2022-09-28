@@ -1,3 +1,9 @@
+setTimeout(() => {
+    const Scrollbar = window.Scrollbar;
+    Scrollbar.init(document.querySelector("#my-scrollbar"));
+}, 100);
+
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry);

@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+    font-family: "Americana Typewriter";
+    src: url("/fonts/americana-typewriter-2.ttf");
+}
+
 :root{
     --bg-color: #f1f1f1;
     --type-writer-speed: 4s;
     --type-writer-characters: 11;
+    --font-writer: "Americana Typewriter", monospace
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
     margin: 0;
@@ -15,17 +25,32 @@ body{
     font-size: 24px;
 }
 section{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
+cite{
+    text-align: center;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    padding: auto 25%;
+    font-size: 12px;
+    border-top: 2px solid black;
+}
+
 .header-section h1{
-    font-family: 'Courier Prime', monospace;
-    font-size: 10vw;
+    font-family: var(--font-writer);
+    letter-spacing: 8px;
+    font-size: 46px;
     position: relative;
     align-self: center;
     width: max-content;
@@ -126,9 +151,6 @@ li:nth-child(7){
 }
 
 .section-content{
-    padding: 4em;
-    border: 4px solid black;
-    width: 60vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -137,7 +159,8 @@ li:nth-child(7){
 .section-content h2{
     font-weight: bold;
     margin: 0;
-    font-size: 6vw;
+    font-size: 40px;
+    border-bottom: 2px solid;
 }
 .section-content li{
     margin-bottom: 1em;
@@ -150,23 +173,111 @@ li:nth-child(7){
     transition: border 2s;
 }
 .section-content.show{
-    border: 4px solid black;
+    
 }
 .section-content .hidden{
-    transform: translateX(-10%);
+    transform: translateX(-50%);
 }
 .section-content .show{
     transform: translateX(0);
 }
 
-@media screen and (max-width: 700px) {
-    body{
-        font-size: 16px;
+.stacked-content{
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+    font-size: 32px;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    padding: 8px;
+}
+.stacked-content > span{
+    transition: all 0.5s ease;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+.stacked-content > span:nth-child(n){
+    opacity: 0.8;
+}
+.stacked-content > span:nth-child(2n){
+    opacity: 0.5;
+}
+.stacked-content > span:nth-child(3n){
+    opacity: 0.7;
+}
+.stacked-content > span:nth-child(4n){
+    opacity: 0.4;
+}
+.stacked-content > span.header-word{
+    opacity: 1;
+    font-weight: bolder;
+    font-size: 42px;
+}
+.stacked-content > span:active{
+    font-size: 48px;
+    opacity: 1;
+    word-break: break-word;
+}
+#my-scrollbar{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+.header-slash{
+    height: 2px;
+    width: 0%;
+    background: #f1f1f1;
+    z-index: 100;
+    top: 55%;
+    position: absolute;
+    animation: slash 0.125s ease-in 5s forwards;
+}
+.green{
+    color: green;
+}
+.email-section{
+    font-size: 18px;
+    text-align: center;
+}
+section p{
+    padding: 0 12px !important;
+}
+@keyframes slash {
+    to{
+        width: 100%;
     }
-    .section-content {
-        padding: 2em 1em;
+}
+
+@media screen and (min-width: 1024px) {
+    #logoSVG{
+        max-width: 80vw;
     }
-    section p{
-        margin: 0 5%;
+    .stacked-content{
+        width: 600px;
+    }
+    .stacked-content > span:hover{
+        font-size: 48px;
+        opacity: 1;
+        word-break: break-word;
+    }
+    .header-section h1{
+        font-size: 120px;
+    }
+    cite{
+        width: 600px;
+    }
+    .section-content.border{
+        padding: 48px;
+        border: 8px solid black;
+    }
+    .header-slash{
+        height: 4px;
     }
 }
