@@ -1,253 +1,81 @@
 <!DOCTYPE html>
-<html lang="cs-CZ">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalista</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="svg-anim.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.min.js" integrity="sha512-DmxN+h4rvEbHxmkzhxEA1krRvgdzSFhjkcTe2HCZpd5ZnxP9+OWGHB8iMUQhvidmrivCTe3g0hyeMpfTLIwf7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="main.js"></script>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="swiped-events.js"></script>
 </head>
-<body id="my-scrollbar">
-    <section class="header-section">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 512 300" style="enable-background:new 0 0 512 512;" 
-             xml:space="preserve" id="logoSVG">
-        <style type="text/css">
-            .st0{fill:#020203;}
-            .st1{display:none;}
-            .st2{display:inline;fill:#020203;}
-            .st3{fill:#3AAA35;}
-        </style>
-        <g id="text">
-            <g>
-                <path class="st0" d="M40.6,290.1c-1.7,0-2.5-0.8-2.5-2.5c0-1.7,0.8-2.5,2.5-2.5h3.6v-39.4h-0.5l-8.4,42.4
-                    c-0.1,0.6-0.4,1.1-0.9,1.5c-0.5,0.4-1.1,0.6-1.8,0.6c-1.2,0-1.9-0.7-2.2-2L22,245.7h-0.5v39.4h3.6c1.6,0,2.5,0.8,2.5,2.5
-                    c0,1.6-0.8,2.5-2.5,2.5l-6.4-0.9l-5.8,0.9c-1.6,0-2.5-0.8-2.5-2.5c0-1.7,0.8-2.5,2.5-2.5h3.7v-39.4H13c-1.7,0-2.5-0.8-2.5-2.5
-                    c0-1.7,0.8-2.5,2.5-2.5l6.1,0.9l5-0.9c1.5,0,2.3,0.7,2.5,2.2l6.4,32.5l6.4-32.7c0.3-1.3,1.1-2,2.4-2l5.7,0.9l5.4-0.9
-                    c1.6,0,2.5,0.8,2.5,2.5c0,1.7-0.8,2.5-2.5,2.5h-3.6v39.4h3.7c1.7,0,2.5,0.8,2.5,2.5c0,1.6-0.8,2.5-2.5,2.5l-6.2-0.9L40.6,290.1z"
-                    />
-                <path class="st0" d="M92.2,285.1c3.3-0.3,3.3,5.3,0,5c0,0-14.8-0.9-14.8-0.9l-13.4,0.9c-3.3,0.3-3.3-5.3,0-5c0,0,9.4,0.9,9.4,0.9
-                    l1.4-0.9V261H64.1c-3.3,0.3-3.3-5.3,0-4.9c0,0,6.3,0.9,6.3,0.9l7-0.9c1.6,0,2.5,0.8,2.5,2.5v26.6
-                    C81.6,286.7,90.2,285.2,92.2,285.1z M76.4,243.2c5-0.1,6.3,7.1,1.8,8.9c-4.4,2.1-8.7-4.2-5-7.5v0
-                    C74.1,243.6,75.2,243.2,76.4,243.2z M182.6,285.6c3.3-0.3,3.3,5.3,0,5c0,0-14.8-0.9-14.8-0.9l-13.4,0.9c-3.3,0.3-3.3-5.3,0-5
-                    c0,0,9.4,0.9,9.4,0.9l1.4-0.9v-24.1h-10.8c-3.3,0.3-3.3-5.3,0-4.9c0,0,6.3,0.9,6.3,0.9l7-0.9c1.6,0,2.5,0.8,2.5,2.5v26.6
-                    C171.9,287.2,180.5,285.7,182.6,285.6z M166.8,243.6c5-0.1,6.3,7.1,1.8,8.9c-4.4,2.1-8.7-4.2-5-7.5v0
-                    C164.4,244.1,165.5,243.6,166.8,243.6z"/>
-                <path class="st0" d="M105.6,261c-1.6,0-2.4-0.8-2.4-2.5c0-1.6,0.8-2.5,2.4-2.5l3.8,0.9l2.6-0.9c0.8,0,1.4,0.2,1.9,0.6
-                    c0.4,0.4,0.7,1,0.6,1.8l-0.1,5.1c1.4-1.3,2.7-2.4,3.9-3.4c1.2-0.9,2.4-1.7,3.5-2.4c1.1-0.6,2.3-1.1,3.3-1.4
-                    c1.1-0.3,2.2-0.5,3.3-0.5c2.9,0,5.2,1,6.8,2.9c1.7,1.9,2.6,4.6,2.7,8.2l0.4,18l2.4,0.9l1.8-0.9c1.6,0,2.5,0.8,2.5,2.5
-                    c0,1.6-0.8,2.5-2.5,2.5l-7.1-0.9l-6.6,0.9c-1.6,0-2.5-0.8-2.5-2.5c0-1.7,0.8-2.5,2.5-2.5l1.8,0.9l2.9-0.9l-0.5-17.9
-                    c-0.1-2.1-0.5-3.7-1.2-4.7c-0.7-1-1.8-1.5-3.4-1.5c-1.1,0-2.2,0.3-3.3,0.8c-1.2,0.5-2.3,1.2-3.5,2.1c-1.2,0.9-2.4,2-3.7,3.2
-                    c-1.3,1.2-2.5,2.5-3.7,4l-0.3,14.1l2.8,0.9l1.8-0.9c1.7,0,2.5,0.8,2.5,2.5c0,1.6-0.8,2.5-2.5,2.5l-7.2-0.9l-7.4,0.9
-                    c-1.6,0-2.5-0.8-2.5-2.5c0-1.7,0.8-2.5,2.5-2.5l2.1,0.9l3-0.9l0.2-14.2c-0.1-0.1-0.1-0.2-0.1-0.4c0-0.1,0-0.2,0-0.4
-                    c0-0.3,0-0.5,0.1-0.8l0.2-8.4H105.6z"/>
-                <path class="st0" d="M194.6,261c-1.6,0-2.5-0.8-2.5-2.5c0-1.6,0.8-2.5,2.5-2.5l3.1,0.9l3.3-0.9c1.6,0,2.5,0.8,2.5,2.5v0.2
-                    c1.9-1.8,4.1-2.7,6.5-2.7c1.5,0,2.9,0.3,3.9,1c1.1,0.7,2,1.7,2.6,3.2c2.2-2.8,4.8-4.2,7.9-4.2c2.3,0,4.1,0.8,5.4,2.3
-                    c1.3,1.5,2,3.8,2,7l0.3,19.8h1.4c1.6,0,2.5,0.8,2.5,2.5c0,1.6-0.8,2.5-2.5,2.5l-3.7-0.9l-4.5,0.9c-1.7,0-2.5-0.8-2.5-2.5
-                    c0-1.7,0.8-2.5,2.5-2.5h1.8l-0.3-19.8c0-1.6-0.2-2.7-0.6-3.4c-0.3-0.7-1-1-2-1c-0.8,0-1.6,0.2-2.3,0.7c-0.7,0.5-1.4,1.2-2,2
-                    c-0.6,0.9-1.1,1.9-1.6,3c-0.4,1.2-0.7,2.4-0.9,3.8c0,0.1-0.1,0.2-0.1,0.3c0,0.1-0.1,0.2-0.1,0.2l0.2,14h1.4c1.6,0,2.5,0.8,2.5,2.5
-                    c0,1.6-0.8,2.5-2.5,2.5l-3.7-0.9l-4.5,0.9c-1.7,0-2.5-0.8-2.5-2.5c0-1.7,0.8-2.5,2.5-2.5h1.8l-0.3-19.8c0-1.6-0.2-2.7-0.6-3.4
-                    c-0.3-0.7-1-1-2-1c-0.8,0-1.5,0.2-2.2,0.6c-0.7,0.4-1.4,1-1.9,1.8c-0.6,0.8-1.1,1.7-1.5,2.8c-0.4,1.1-0.8,2.3-1,3.5l-0.3,15.4h1.5
-                    c1.7,0,2.5,0.8,2.5,2.5s-0.8,2.5-2.5,2.5l-5.1-0.9l-5.5,0.9c-1.6,0-2.5-0.8-2.5-2.5s0.8-2.5,2.5-2.5h4.1l0.3-14.2
-                    c-0.1-0.2-0.1-0.5-0.1-0.7c0-0.2,0-0.3,0-0.5c0-0.2,0.1-0.3,0.1-0.6l0.1-8.2H194.6z"/>
-                <path class="st0" d="M249.3,262.2c0.4,0.6,0.6,1.2,0.6,1.8c0,1.1-0.4,2-1.1,2.6c-0.7,0.6-1.6,1-2.7,1c-1,0-1.8-0.4-2.4-1.1
-                    c-0.7-0.7-1-1.6-1-2.6c0-1.2,0.3-2.3,1-3.3c0.7-1,1.6-1.8,2.8-2.5c1.2-0.7,2.6-1.2,4.3-1.5c1.7-0.4,3.5-0.5,5.4-0.5
-                    c2.1,0,4.1,0.2,5.9,0.7c1.8,0.5,3.3,1.1,4.6,2c1.3,0.8,2.3,1.9,3,3.1c0.7,1.2,1.1,2.5,1.1,3.9v15.4c0,0.5,0,1,0.1,1.5
-                    c0.1,0.5,0.1,0.9,0.2,1.3c0.1,0.4,0.2,0.7,0.4,0.9c0.1,0.2,0.3,0.4,0.5,0.4c0.1,0,0.1,0,0.1,0c0.3-0.1,0.5-0.5,0.7-1.3
-                    c0.2-0.8,0.2-1.7,0.2-2.7v-0.5c0-1.7,0.9-2.5,2.6-2.5c0.7,0,1.3,0.2,1.7,0.6c0.4,0.4,0.6,1,0.6,1.8v0.6c0,3-0.5,5.3-1.6,6.7
-                    c-1.1,1.4-2.5,2.2-4.4,2.2h0.1c-1.3,0-2.5-0.4-3.4-1.2c-1-0.8-1.7-2-2.1-3.7c-4,3.2-7.9,4.9-11.8,4.9c-2,0-4-0.3-5.7-0.8
-                    c-1.8-0.5-3.3-1.2-4.6-2.1c-1.3-0.9-2.3-2-3-3.3c-0.7-1.3-1.1-2.7-1.1-4.2c0-4.1,1.6-6.8,4.7-8c3.1-1.2,6.7-2.2,10.7-2.9
-                    c1.8-0.3,3.7-0.7,5.5-1c1.8-0.4,3.4-1,4.8-1.7v-0.3c0-0.7-0.3-1.3-0.8-1.9c-0.5-0.6-1.2-1.1-2.1-1.5c-0.9-0.4-1.9-0.7-3.1-1
-                    s-2.4-0.3-3.7-0.3c-1.5,0-2.9,0.1-4.1,0.3C250.9,261.5,250,261.8,249.3,262.2z M265.9,279.1v-7.7c-1.5,0.6-3,1-4.6,1.3
-                    c-1.6,0.3-3.2,0.6-4.8,0.9c-1.5,0.3-2.9,0.6-4.2,0.9c-1.3,0.3-2.5,0.6-3.7,1c-2.3,0.7-3.4,2.1-3.4,4.2c0,0.8,0.2,1.5,0.7,2.2
-                    c0.5,0.7,1.1,1.2,2,1.7c0.8,0.5,1.9,0.9,3,1.1c1.2,0.3,2.4,0.4,3.8,0.4c1,0,2-0.2,2.9-0.5c0.9-0.3,1.9-0.7,2.8-1.3
-                    c0.9-0.5,1.8-1.2,2.8-1.9C264,280.7,265,279.9,265.9,279.1z"/>
-                <path class="st0" d="M289.5,245.7c-1.6,0-2.5-0.8-2.5-2.5c0-1.6,0.8-2.5,2.5-2.5l8.6,0.9l5.7-0.9c1.6,0,2.5,0.8,2.5,2.5v41.9
-                    l5.7,0.9l7.2-0.9c1.7,0,2.5,0.8,2.5,2.5c0,1.6-0.8,2.5-2.5,2.5l-15.9-0.9l-13.7,0.9c-1.6,0-2.5-0.8-2.5-2.5c0-1.7,0.8-2.5,2.5-2.5
-                    l7.8,0.9l3.9-0.9v-39.4l-2.9-0.9L289.5,245.7z"/>
-                <path class="st0" d="M404.8,258.4c0-0.8,0.2-1.4,0.7-1.8c0.4-0.4,1.1-0.6,1.9-0.6c0.8,0,1.4,0.2,1.8,0.6c0.4,0.4,0.6,1,0.6,1.7
-                    v0.2l-1,3.7l0.8,4.4c-0.1,0.8-0.3,1.4-0.7,1.8c-0.4,0.4-1,0.6-1.8,0.6c-0.5,0-0.9-0.1-1.3-0.3c-0.3-0.2-0.6-0.5-0.9-0.9
-                    c-0.8-1.4-1.6-2.5-2.4-3.4c-0.8-0.9-1.5-1.6-2.4-2.1c-0.8-0.5-1.7-0.9-2.7-1s-2-0.3-3.2-0.3c-1.3,0-2.5,0.1-3.7,0.3
-                    c-1.2,0.2-2.3,0.5-3.2,0.9c-0.9,0.4-1.7,0.8-2.3,1.2s-0.9,0.9-0.9,1.4c0,1,0.3,1.7,1,2.2c0.7,0.5,1.6,0.9,2.8,1.3
-                    c1.2,0.3,2.5,0.5,3.9,0.7s3,0.3,4.6,0.5c1.6,0.2,3.1,0.4,4.6,0.7c1.5,0.3,2.9,0.7,4.1,1.3c3.5,1.6,5.3,4.5,5.3,8.5
-                    c0,1.5-0.4,2.9-1.1,4.2c-0.7,1.3-1.7,2.3-3,3.2c-1.3,0.9-2.8,1.6-4.6,2.1c-1.8,0.5-3.7,0.7-5.8,0.7c-2.5,0-4.7-0.4-6.9-1.2
-                    c-2.1-0.8-3.8-2.1-5.1-3.7v2.5c0,1.6-0.8,2.5-2.5,2.5c-1.6,0-2.5-0.8-2.5-2.5l0.9-5.5l-0.9-5.7c0-0.7,0.3-1.3,0.8-1.8
-                    c0.5-0.5,1.2-0.8,1.9-0.8c0.8,0,1.5,0.5,2,1.5c0.7,1.5,1.4,2.8,2.2,4c0.7,1.2,1.6,2.2,2.5,3.1c0.9,0.8,2,1.5,3.2,2
-                    c1.2,0.5,2.7,0.7,4.4,0.7c1.3,0,2.6-0.1,3.8-0.3c1.2-0.2,2.2-0.6,3-1c0.8-0.5,1.5-1,2-1.7c0.5-0.6,0.7-1.4,0.7-2.2
-                    c0-1.2-0.4-2.2-1.1-2.9c-0.8-0.7-1.8-1.3-3-1.7c-1.2-0.4-2.6-0.7-4.2-0.9c-1.6-0.2-3.2-0.4-4.8-0.6c-1.6-0.2-3.2-0.4-4.8-0.7
-                    c-1.6-0.3-3-0.8-4.2-1.4c-1.2-0.6-2.2-1.5-3-2.6c-0.8-1.1-1.1-2.5-1.1-4.3c0-1.3,0.4-2.5,1.1-3.5c0.7-1.1,1.8-2,3.1-2.8
-                    c1.3-0.8,2.9-1.4,4.7-1.8c1.8-0.4,3.8-0.6,6-0.6c2.2,0,4.2,0.3,5.9,0.9c1.7,0.6,3.3,1.5,4.7,2.7L404.8,258.4z"/>
-                <path class="st0" d="M429,261c-1.6,0-1.6-4.9,0-4.9h7.4v-10.7c0-1.7,0.8-2.5,2.5-2.5c1.6,0,2.5,0.8,2.5,2.5v10.7h12.4
-                    c1.6,0,2.5,0.8,2.5,2.5c0,1.6-0.8,2.5-2.5,2.5h-12.4v18.4c0,1.7,0.3,3.2,0.9,4.2c0.6,1.1,1.4,1.6,2.6,1.6c0.9,0,1.8-0.2,2.6-0.6
-                    c0.8-0.4,1.4-1,2-1.7c0.5-0.7,1-1.5,1.3-2.5c0.3-1,0.5-2,0.6-3.2c0.1-1.5,0.9-2.3,2.4-2.3c1.7,0,2.6,0.8,2.6,2.4
-                    c0,1.9-0.3,3.6-0.9,5.2c-0.6,1.6-1.4,2.9-2.4,4c-1,1.1-2.2,2-3.6,2.6c-1.4,0.6-2.8,0.9-4.4,0.9c-1.3,0-2.4-0.3-3.4-0.8
-                    c-1-0.5-1.9-1.2-2.7-2.2c-0.7-0.9-1.3-2.1-1.7-3.4c-0.4-1.3-0.6-2.8-0.6-4.4V261H429z"/>
-                <path class="st0" d="M475.5,262.2c0.4,0.6,0.6,1.2,0.6,1.8c0,1.1-0.4,2-1.1,2.6c-0.7,0.6-1.6,1-2.7,1c-1,0-1.8-0.4-2.4-1.1
-                    c-0.7-0.7-1-1.6-1-2.6c0-1.2,0.3-2.3,1-3.3c0.7-1,1.6-1.8,2.8-2.5c1.2-0.7,2.6-1.2,4.3-1.5c1.7-0.4,3.5-0.5,5.4-0.5
-                    c2.1,0,4.1,0.2,5.9,0.7c1.8,0.5,3.3,1.1,4.6,2c1.3,0.8,2.3,1.9,3,3.1c0.7,1.2,1.1,2.5,1.1,3.9v15.4c0,0.5,0,1,0.1,1.5
-                    c0.1,0.5,0.1,0.9,0.2,1.3c0.1,0.4,0.2,0.7,0.4,0.9c0.1,0.2,0.3,0.4,0.5,0.4c0.1,0,0.1,0,0.1,0c0.3-0.1,0.5-0.5,0.7-1.3
-                    c0.2-0.8,0.2-1.7,0.2-2.7v-0.5c0-1.7,0.9-2.5,2.6-2.5c0.7,0,1.3,0.2,1.7,0.6c0.4,0.4,0.6,1,0.6,1.8v0.6c0,3-0.5,5.3-1.6,6.7
-                    c-1.1,1.4-2.5,2.2-4.4,2.2h0.1c-1.3,0-2.5-0.4-3.4-1.2c-1-0.8-1.7-2-2.1-3.7c-4,3.2-7.9,4.9-11.8,4.9c-2,0-4-0.3-5.7-0.8
-                    c-1.8-0.5-3.3-1.2-4.6-2.1c-1.3-0.9-2.3-2-3-3.3c-0.7-1.3-1.1-2.7-1.1-4.2c0-4.1,1.6-6.8,4.7-8c3.1-1.2,6.7-2.2,10.7-2.9
-                    c1.8-0.3,3.7-0.7,5.5-1c1.8-0.4,3.4-1,4.8-1.7v-0.3c0-0.7-0.3-1.3-0.8-1.9c-0.5-0.6-1.2-1.1-2.1-1.5c-0.9-0.4-1.9-0.7-3.1-1
-                    c-1.2-0.2-2.4-0.3-3.7-0.3c-1.5,0-2.9,0.1-4.1,0.3C477.1,261.5,476.2,261.8,475.5,262.2z M492.1,279.1v-7.7c-1.5,0.6-3,1-4.6,1.3
-                    c-1.6,0.3-3.2,0.6-4.8,0.9c-1.5,0.3-2.9,0.6-4.2,0.9c-1.3,0.3-2.5,0.6-3.7,1c-2.3,0.7-3.4,2.1-3.4,4.2c0,0.8,0.2,1.5,0.7,2.2
-                    c0.5,0.7,1.1,1.2,2,1.7c0.8,0.5,1.9,0.9,3,1.1c1.2,0.3,2.4,0.4,3.8,0.4c1,0,2-0.2,2.9-0.5c0.9-0.3,1.9-0.7,2.8-1.3
-                    c0.9-0.5,1.8-1.2,2.8-1.9C490.2,280.7,491.1,279.9,492.1,279.1z"/>
-            </g>
-            <path class="st0" d="M363.1,285.7c1.6,0,2.5,0.8,2.5,2.5c0,1.6-0.8,2.5-2.5,2.5l-14.8-0.9l-13.4,0.9c-1.6,0-2.5-0.8-2.5-2.5
-                c0-1.7,0.8-2.5,2.5-2.5l9.4,0.9l1.4-0.9v-24.1H335c-1.6,0-2.5-0.8-2.5-2.5c0-1.6,0.8-2.5,2.5-2.5l6.3,0.9l7-0.9
-                c1.6,0,2.5,0.8,2.5,2.5v26.6l2.4,0.9L363.1,285.7z M347.4,243.7c0.7,0,1.3,0.1,1.8,0.4c0.6,0.3,1.1,0.6,1.5,1
-                c0.4,0.4,0.7,0.9,1,1.5c0.2,0.6,0.3,1.1,0.3,1.7c0,0.6-0.1,1.2-0.4,1.8c-0.3,0.6-0.6,1.1-1,1.5c-0.4,0.4-0.9,0.8-1.5,1
-                c-0.6,0.3-1.2,0.4-1.8,0.4c-0.6,0-1.2-0.1-1.8-0.4c-0.6-0.3-1-0.6-1.5-1c-0.4-0.4-0.8-0.9-1-1.5c-0.3-0.6-0.4-1.2-0.4-1.8
-                c0-1.2,0.5-2.3,1.4-3.2v0C345,244.2,346.1,243.7,347.4,243.7z"/>
-        </g>
-        <g id="obdelnik" class="st1">
-            <rect x="-0.5" y="237.2" class="st2" width="512" height="56.9"/>
-        </g>
-        <g id="slice">
-            <rect x="-0.5" y="270" class="st2" width="512" height="3"/>
-        </g>
-        <g class="teckySVG">
-        </g>
-        <g id="logo">
-                <image style="overflow:visible;enable-background:new    ;" 
-                width="374" height="377" id="Vrstva_4_1_" 
-                xlink:href="img/DD11D8DA.png"  
-                transform="matrix(0.6186 0 0 0.6186 141.6919 7)">
-            </image>
-        </g>
-        <g >
-        </g>
-        <g>
-            <path class="st0" d="M343.3,286.3"/>
-            <circle id="tecka_3" class="teckySVG" class="st3" cx="347.5" cy="248" r="5"/>
-            <circle id="tecka_2" class="teckySVG" class="st3" cx="167.2" cy="248.4" r="5"/>
-            <circle id="tecka_1" class="teckySVG" class="st3" cx="76.5" cy="247.4" r="5"/>
-        </g>
-        </svg>
-        
-        <!--<h1>
-            <div class="header-slash"></div>
-            Minimalista
-        </h1>-->
-        <p>Jednoduše nejlepší kampaně.</p>
-    </section>
-
-    <section>
-        <cite class="hidden">
-            „Minimalistickým designem a udržitelným přístupem k tvorbě komunikačních kampaní dokážeme upoutat pozornost zákazníků a nasměrovat je tak, aby byly naplněny cíle každé organizace.“ 
-        </cite>
-    </section>
-
-    <section>
-        <div class="section-content stacked-content" lang="de">
-            <span class="hidden">Mediální kampaně</span>
-            <span class="hidden">Sociální sítě</span>
-            <span class="hidden">Odborné konzultace</span>
-            <span class="hidden">Design</span>
-            <span class="header-word">Naše služby</span>
-            <span class="hidden">Webové stránky</span>
-            <span class="hidden">Reklamy</span>
-            <span class="hidden">Videospoty</span>
-            <span class="hidden">Bannery</span>
-            <span class="hidden">PR</span>
-            <span class="hidden">Tvorba textů</span>
-        </div>
-    </section>
-
-    <!--
-    <section>
-        <div class="section-content hidden">
-            <h2 class="hidden">Náš tým</h2>
-            <p>Jme mladí kreativní lidé s odlišnými dovednostmi a zkušenostmi.</p>
-            <ul>
-                <li class="hidden card">
-                    <div class="card-foto-wrapper">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="card-text-wrapper">
-                        <h3>Pavla Nekolná</h3>
-                        <h3>CEO, Projektový manažer</h3>
-                    </div>
-                </li>
-
-                <li class="hidden card">
-                    <div class="card-foto-wrapper">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="card-text-wrapper">
-                        <h3>Vladimíra Kodajová</h3>
-                        <h3>Creative director</h3>
-                    </div>
-                </li>
-                <li class="hidden card">
-                    <div class="card-foto-wrapper">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="card-text-wrapper">
-                        <h3>Michal Kovář</h3>
-                        <h3>Grafický designer</h3>
-                    </div>
-                </li>
-                <li class="hidden card">
-                    <div class="card-foto-wrapper">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="card-text-wrapper">
-                        <h3>Nikola Křístková</h3>
-                        <h3>Copywriter</h3>
-                    </div>
-                </li>
-                <li class="hidden card">
-                    <div class="card-foto-wrapper">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="card-text-wrapper">
-                        <h3>Michal Dvořák</h3>
-                        <h3>Webový vývojář</h3>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    -->
-
-    <section>
-        <div class="section-content border hidden">
-            <h2 class="hidden">Naše hodnoty</h2>
-            <ul>
-                <li class="hidden">Minimalistické kampaně v souladu s <span class="green">udržitelností</span>.</li>
-                <li class="hidden">Flexibilní, otevřený přístup a aktivní přístup k zákazníkovi.</li>
-                <li class="hidden">Obsah, který se nezkazí po jednom použití.</li>
-                <li class="hidden">Vztahy na dlouho, ne jen na jednu kampaň.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!--
-    <section>
-        <div class="section-content hidden">
-            <h2 class="hidden">Naše služby</h2>
-            <ul>
-                <li class="hidden">Správa kampaní a sociálních sítí</li>
-                <li class="hidden">Určení mediální strategie</li>
-                <li class="hidden">Návrh designu</li>
-                <li class="hidden">Tvorba webových stránek</li>
-                <li class="hidden">Tvorba reklamy, videospotu</li>
-            </ul>
-        </div>
-    </section>-->
-
-    <section class="email-section">
-        <p class="hidden">Pro spolupráci nás kontaktujte na: <a href='mailto&#58;m%69%&#54;Ei&#37;6Dal%&#54;&#57;%&#55;&#51;&#37;7&#52;a&#46;&#37;6A&#101;d&#37;6&#69;odu%&#55;3&#101;&#64;&#103;%&#54;Da%69&#108;&#46;&#37;63om'>&#109;inimalis&#116;&#97;&#46;j&#101;dn&#111;&#100;&#117;se&#64;gma&#105;l&#46;com</a></p>
-    </section>
-    <footer>
-        © 2022 - Vlastníkem stránky je společnost Minimalista s.r.o.
-    </footer>
+<body>
+  <header>
+    <h1>Michal Dvořák</h1>
+    <h2>Absolvent kurzu Digitální fotografie na Vysoké škole ekonomické v Praze</h2>
+  </header>
+  <div id="image-grid" class="wrapper">
+    <div class="card span-2 c1"></div>
+    <div class="card span-1 c2"></div>
+    <div class="card span-3 c3"></div>
+    <div class="card span-1 c4"></div>
+    <div class="card span-1 c5"></div>
+    <div class="card span-2 c1"></div>
+    <div class="card span-1 c2"></div>
+    <div class="card span-3 c3"></div>
+    <div class="card span-1 c4"></div>
+    <div class="card span-2 c1"></div>
+    <div class="card span-1 c2"></div>
+    <div class="card span-3 c3"></div>
+    <div class="card span-1 c4"></div>
+    <div class="card span-1 c5"></div>
+    <div class="card span-2 c1"></div>
+    <div class="card span-1 c2"></div>
+    <div class="card span-1 c3"></div>
+    <div class="card span-1 c4"></div>
+  </div>
+  <div class="hidden" id="images">
+    <img src="images/dvorak-michal-cb1.jpg">
+    <img src="images/dvorak-michal-cb2.jpg">
+    <img src="images/dvorak-michal-charakter1.jpg">
+    <img src="images/dvorak-michal-malba1.jpg">
+    <img src="images/dvorak-michal-malba2.jpg">
+    <img src="images/dvorak-michal-naznaceny1.jpg">
+    <img src="images/dvorak-michal-naznaceny2.jpg">
+    <img src="images/dvorak-michal-reklama1.jpg">
+    <img src="images/IMG_7085.jpg">
+    <img src="images/IMG_7168-HDR-2.jpg">
+    <img src="images/IMG_7277.jpg">
+    <img src="images/IMG_7285.jpg">
+    <img src="images/IMG_7288.jpg">
+    <img src="images/IMG_7335.jpg">
+    <img src="images/IMG_7338.jpg">
+    <img src="images/IMG_7339.jpg">
+    <img src="images/IMG_7387.jpg">
+    <img src="images/IMG_7399.jpg">
+    <img src="images/IMG_7419.jpg">
+    <img src="images/IMG_7459.jpg">
+    <img src="images/IMG_7544.jpg">
+    <img src="images/IMG_7796.jpg">
+    <img src="images/IMG_9878.jpg">
+  </div>
+  <div id="detail-backdrop">
+    <div id="detail-prev" class="column-center hover-darken">
+      <div><</div>
+    </div>
+    <div id="detail-content" class="column-space-between">
+      <div id="detail-hide" class="hover-darken">Zavřít prohlížení fotek</div>
+      <img id="detail-content-image">
+      <div></div>
+    </div>
+    <div id="detail-next" class="column-center hover-darken">
+      <div>></div>
+    </div>
+  </div>
+  <footer>
+    <div> </div>
+    <div class="contact">V případě zájmu o spolupráci se mi prosím ozvěte na email <a href="mailto:michal.dvorak999@gmail.com">michal.dvorak999@gmail.com</a>, a domluvíme se.</div>
+    <div class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Toto dílo podléhá licenci <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Uveďte původ-Neužívejte komerčně-Nezpracovávejte 4.0 Mezinárodní License</a>. Autorem je Michal Dvořák.</div>
+  </footer>
+  <script defer src="script.js"></script>
 </body>
 </html>
